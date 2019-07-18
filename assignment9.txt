@@ -1,0 +1,25 @@
+# include <Servo.h>
+Servo myservo;
+int Readvalue;
+int PIR = 10;
+
+void setup() {
+  myservo.attach(5);
+  pinMode(PIR,INPUT);
+
+
+}
+
+void loop() {
+  Readvalue  = digitalRead(PIR);
+  if (Readvalue ==HIGH){
+  myservo.write(180);
+  delay(1000);
+}
+  else{
+  myservo.write(0);
+  delay(1000);}
+  
+  
+
+}

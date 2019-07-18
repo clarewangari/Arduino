@@ -1,0 +1,25 @@
+#include <LiquidCrystal.h>
+LiquidCrystal lcd (7,8,9,10,11,12);
+int PIR = 6;
+
+void setup() {
+  pinMode(PIR, INPUT);
+  lcd.begin(16,2);
+  lcd.clear();
+  // put your setup code here, to run once:
+
+}
+
+void loop() {
+  ReadValue=digitalRead(PIR);
+  if(ReadValue == HIGH){
+  lcd.print(what!);
+}
+else{
+  (digitalWrite(ledred,LOW);
+}
+}
+lcd.print("alert");
+  // put your main code here, to run repeatedly:
+
+}

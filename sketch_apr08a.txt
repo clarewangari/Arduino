@@ -1,0 +1,20 @@
+int pinpot=A0;
+int LEDBLUE=5;
+
+void setup() {
+  Serial.begin(9600);
+  pinMode(LEDBLUE,OUTPUT);
+  
+ 
+  // put your setup code here, to run once:
+
+}
+
+void loop() {
+  analogWrite(LEDBLUE,113);
+  delay(1000);
+  analogWrite(LEDBLUE,0);
+  delay(1000);
+  // put your main code here, to run repeatedly:
+
+}

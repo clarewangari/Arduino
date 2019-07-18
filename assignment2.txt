@@ -1,0 +1,36 @@
+# include <LiquidCrystal.h>
+LiquidCrystal lcd(7,8,9,10,1,12);
+int TRIG=3;
+int Echo=5;
+float Time;
+float distance;
+
+void setup() {
+  lcd.begin(16,2);
+  lcd.clear();
+  pinMode(Echo,INPUT);
+  pinMode(TRIG, OUTPUT);
+  
+  
+
+}
+
+void loop() {
+  lcd.setCursor(0,0);
+  lcd.print("distance= ");
+  
+   digitalWrite(TRIG,LOW);
+  delayMicroseconds(2);
+  digitalWrite(TRIG,HIGH);
+  delayMicroseconds(10);
+  digitalWrite(TRIG,LOW);
+  
+  Time=pulseIn(Echo,HIGH);
+  distance=(Time*0.0343)/2;
+   
+  lcd.print(distance);
+  delay(500);
+ 
+ 
+
+}

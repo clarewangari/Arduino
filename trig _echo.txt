@@ -1,0 +1,35 @@
+#include<Servo.h>
+# include <LiquidCrystal.h>
+LiquidCrystal lcd(7,8,9,10,11,12);
+Servo servopin;
+int PIR=2;
+int ReadValue;
+
+void setup() {
+  
+  // put your setup code here, to run once:
+  lcd.begin(16,2);
+  lcd.clear();
+  pinMode(PIR,INPUT);
+  servopin.attach(9);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  ReadValue=analogRead(PIR);
+ 
+  if(ReadValue==HIGH){
+     servopin.write(90);
+     delay(1000);}
+  
+  else{
+    servopin.write(0);
+    delay(10);
+    }
+
+    
+    lcd.setCursor(0,0);
+    lcd.print("Motion detected ");
+    lcd.print(analogRead(ReadValue));
+    delay(500);
+}

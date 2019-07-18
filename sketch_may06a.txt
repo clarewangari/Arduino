@@ -1,0 +1,28 @@
+# include <Servo.h>
+Servo myservo;
+int Readvalue;
+int potpin = A0;
+
+
+void setup() {
+  myservo.attach(10);
+ pinMode(potpin,INPUT);
+
+
+
+}
+
+void loop() {
+ Readvalue =analogRead(potpin);
+ Serial.print(Readvalue);
+Serial.println(" ");
+Readvalue=map(Readvalue,0,1023,0,180);
+myservo.write(Readvalue);
+
+delay(15);
+
+
+  
+  
+
+}
